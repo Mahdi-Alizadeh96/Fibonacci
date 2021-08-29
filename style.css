@@ -1,3 +1,15 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 * {
   box-sizing: border-box;
   padding: 0%;
@@ -64,6 +76,7 @@ body {
 
 .fibo {
   margin-top: 2rem;
+  width: 100%;
 }
 .fibo .fibo__index {
   display: flex;
@@ -89,16 +102,111 @@ body {
 .fibo .fibo__index input:focus {
   background-color: #c0945b;
 }
+.fibo .fibo__index input :hover {
+  -webkit-appearance: none;
+}
 .fibo .fibo__index button {
   margin-top: 0.5rem;
   cursor: pointer;
   padding: 0.5rem;
-  background-color: #c0945b;
+  background-color: #fff2e1;
+  border: 2px solid #c0945b;
   border-radius: 0.6rem;
-  color: #ffe4c4;
+  color: #c0945b;
+  font-family: "Courgette", cursive;
+  font-weight: 400;
+  font-size: 1rem;
 }
 .fibo .fibo__index button:hover {
-  box-shadow: 0px 0px 8px #c0945b;
+  border: 2px solid #fff2e1;
+  background-color: #c0945b;
+  color: #fff2e1;
+}
+.fibo .fibo__box {
+  margin-top: 1rem;
+  font-family: "Courgette", cursive;
+}
+.fibo .fibo__box .fibo__wait {
+  width: 100%;
+  height: 100%;
+  background-color: #ffe4c4;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8rem;
+  display: none;
+  text-align: center;
+  color: #c0945b;
+}
+.fibo .fibo__box .fibo__load {
+  width: 100%;
+  height: 100%;
+  background-color: #ffe4c4;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8rem;
+  display: none;
+  margin-top: 1rem;
+}
+.fibo .fibo__box .fibo__load span {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  margin: 0.5rem;
+  background-color: #fff2e1;
+}
+.fibo .fibo__box .fibo__load span.active {
+  background-color: #c0945b;
+}
+.fibo .fibo__box .fibo__result {
+  width: 100%;
+  height: 100%;
+  background-color: #ffe4c4;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8rem;
+  display: none;
+  flex-direction: column;
+}
+.fibo .fibo__box .fibo__result .fibo_numbers {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  align-items: baseline;
+  width: 100%;
+  margin-bottom: 1.4rem;
+  color: #c0945b;
+}
+.fibo .fibo__box .fibo__result .fibo_numbers div:first-child {
+  font-size: 2rem;
+  opacity: 0.5;
+}
+.fibo .fibo__box .fibo__result .fibo_numbers div:nth-child(2) {
+  font-size: 3.2rem;
+}
+.fibo .fibo__box .fibo__result .fibo_numbers div:nth-child(3) {
+  font-size: 2rem;
+  opacity: 0.5;
+}
+.fibo .fibo__box .fibo__result .fibo_numbers span {
+  position: absolute;
+  top: 3.6rem;
+  font-size: 2.1rem;
+  transform: rotateZ(-90deg);
+}
+.fibo .fibo__wait.active {
+  display: flex;
+}
+.fibo .fibo__load.active {
+  display: flex;
+}
+.fibo .fibo__result.active {
+  display: flex;
 }
 
 /*# sourceMappingURL=style.css.map */
