@@ -2,6 +2,9 @@
   box-sizing: border-box;
   padding: 0%;
   margin: 0%;
+  outline: none;
+  border: none;
+  transition: 0.3s;
 }
 
 body {
@@ -24,7 +27,7 @@ body {
   height: 12rem;
   padding: 3rem;
   border-radius: 50%;
-  background-color: beige;
+  background-color: #fff2e1;
   border: 1px solid #c0945b;
   text-align: center;
 }
@@ -37,7 +40,7 @@ body {
   margin-right: 5px;
 }
 .header .header__striped {
-  background-color: bisque;
+  background-color: #ffe4c4;
   width: 100%;
   height: 15rem;
 }
@@ -49,13 +52,53 @@ body {
   margin: 0 auto;
   padding: 3rem;
   padding-top: 0%;
+  max-width: 55rem;
 }
 .content .content__description {
   text-align: center;
-  font-family: "Caveat", cursive;
+  color: #3f2e19;
+  font-family: "Courgette", cursive;
   font-weight: 400;
   font-size: 1.5rem;
-  color: #3f2e19;
+}
+
+.fibo {
+  margin-top: 2rem;
+}
+.fibo .fibo__index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fibo .fibo__index span {
+  font-family: "Kalam", cursive;
+  font-weight: 100;
+  font-size: 1.2rem;
+}
+.fibo .fibo__index input {
+  background-color: #ffe4c4;
+  text-align: center;
+  color: #fff2e1;
+  height: 2rem;
+  border-radius: 1rem;
+  text-shadow: 0px 0px 5px #3f2e19;
+  font-family: "Courgette", cursive;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.fibo .fibo__index input:focus {
+  background-color: #c0945b;
+}
+.fibo .fibo__index button {
+  margin-top: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: #c0945b;
+  border-radius: 0.6rem;
+  color: #ffe4c4;
+}
+.fibo .fibo__index button:hover {
+  box-shadow: 0px 0px 8px #c0945b;
 }
 
 /*# sourceMappingURL=style.css.map */
