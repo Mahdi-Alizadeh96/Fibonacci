@@ -35,6 +35,7 @@ input[type=number] {
     outline: none;
     border: none;
     transition: 0.3s;
+    text-decoration: none;
 }
 body {
     background-color: map-get($colors, alter);
@@ -59,11 +60,33 @@ body {
         background-color: map-get($colors, alter);
         border: 1px solid map-get($colors, main);
         text-align: center;
+        overflow: hidden;
+
+        .shine {
+            width: 15rem;
+            max-height: 2rem;
+            background-color: #ffffff8e;
+            filter: blur(6px);
+            border-radius: 0%;
+            padding: 0%;
+            transform: rotateZ(-45deg);
+            top: 0rem;
+            left: -7rem;
+            border: none;
+            animation: shine 15s 3s infinite;
+            @keyframes shine {
+                0% {top:0rem ; left:-7rem};
+                10% {top:10rem ; left:4rem};
+                20%,100% {top:0rem ; left:-7rem};
+            }
+        }
 
         h1 {
             height: min-content;
             font-size: 6rem;
-            font-family: 'Caveat', cursive;
+            // font-family: 'Caveat', cursive;
+            // font-family: 'Parisienne', cursive;
+            font-family: 'MonteCarlo', cursive;
             color: map-get($colors, main);
             margin-bottom: 10px;
             margin-right: 5px;
@@ -73,6 +96,14 @@ body {
         background-color: map-get($colors, second);
         width: 100%;
         height: 15rem;
+        overflow: hidden;
+        // background-image: url('media/striped-lines.png');
+        // background-image: url('media/lines.jpg');
+        background-image: url('media/patt3.png');
+        mix-blend-mode: multiply;
+        background-repeat: repeat;
+        background-size: 23rem;
+        border-bottom: 1px solid map-get($colors, main);
     }
 }
 
@@ -208,6 +239,12 @@ body {
             }
 
         }
+        .fibo__final {
+            text-align: center;
+            height: 2rem;
+            color: map-get($colors, dark);
+            margin: 2rem 0rem 1rem 0rem;
+        }
     }
     // activition
     .fibo__wait.active {
@@ -218,5 +255,25 @@ body {
     }
     .fibo__result.active {
         display: flex;
+    }
+}
+
+.footer {
+    background-color: map-get($colors, main);
+    background-image: url('media/math2.png');
+    background: {
+        size: 20rem;
+        position: -5rem;
+        repeat: no-repeat;
+    };
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    text-align: center;
+    font-family: 'Courgette', cursive;
+    align-items: center;
+    a {
+        // padding-top: 1.5rem;
+        color: map-get($colors, alter);
     }
 }
