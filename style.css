@@ -10,6 +10,12 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+input::placeholder {
+  color: #ffe4c4;
+  font-size: 0.8em;
+  text-shadow: none;
+}
+
 * {
   box-sizing: border-box;
   padding: 0%;
@@ -121,7 +127,7 @@ body {
 .fibo .fibo__index span {
   font-family: "Kalam", cursive;
   font-weight: 100;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .fibo .fibo__index input {
   background-color: #ffe4c4;
@@ -163,7 +169,6 @@ body {
 }
 .fibo .fibo__box .fibo__wait {
   width: 100%;
-  height: 100%;
   background-color: #ffe4c4;
   border-radius: 0.5rem;
   display: flex;
@@ -176,7 +181,6 @@ body {
 }
 .fibo .fibo__box .fibo__load {
   width: 100%;
-  height: 100%;
   background-color: #ffe4c4;
   border-radius: 0.5rem;
   display: flex;
@@ -198,7 +202,6 @@ body {
 }
 .fibo .fibo__box .fibo__result {
   width: 100%;
-  height: 100%;
   background-color: #ffe4c4;
   border-radius: 0.5rem;
   display: flex;
@@ -207,9 +210,11 @@ body {
   height: 8rem;
   display: none;
   flex-direction: column;
+  min-height: 8rem;
 }
 .fibo .fibo__box .fibo__result .fibo_numbers {
   display: flex;
+  flex-wrap: wrap;
   position: relative;
   justify-content: space-around;
   align-items: baseline;
