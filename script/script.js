@@ -4,14 +4,15 @@ const   input = document.querySelector('.fibo__index input'),
         fiboLoading = document.querySelector('.fibo__load'),
         fiboResult = document.querySelector('.fibo__result'),
         fiboNumbers = document.querySelector('.fibo_numbers'),
-        finalResult = document.querySelector('.fibo__final');
+        finalText = document.querySelector('.fibo__final');
 let fibo = [1];
 // EventListenet
 go.addEventListener('click', ()=>{
     fibo = [1]
     fiboResult.classList.remove('active');
     if(input.value === '' || input.value < 1){
-        // index must be greater than 0
+        fiboWait.classList.add('active');
+        finalText.innerHTML = `Fibo Final Result `;
     }else {
         calc(input.value);
     }
@@ -51,14 +52,17 @@ function showFinal(getsome) {
         resultNumbers[2].innerHTML = 1;
         resultNumbers[1].innerHTML = 0;
         resultNumbers[0].innerHTML = '';
+        finalText.innerHTML = `The value of index 1 of the Fibonacci sequence is equal to 0`;
     }else if (getsome == 2) {
         resultNumbers[2].innerHTML = 1;
         resultNumbers[1].innerHTML = 1;
         resultNumbers[0].innerHTML = 0;
+        finalText.innerHTML = `The value of index 2 of the Fibonacci sequence is equal to 1`;
     }
      else {
         resultNumbers[2].innerHTML = fibo[Number(input.value - 1)];
         resultNumbers[1].innerHTML = fibo[Number(input.value - 2)];
         resultNumbers[0].innerHTML = fibo[Number(input.value - 3)];
+        finalText.innerHTML = `The value of index ${getsome} of the Fibonacci sequence is equal to ${fibo[Number(input.value - 2)]}`
     }
 }
