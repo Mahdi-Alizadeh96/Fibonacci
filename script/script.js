@@ -49,8 +49,6 @@ function showRerult(getsome) {
     }, 3000);
 }
 function showFinal(getsome) {
-
-
     if(getsome == 1) {
         resultNumbers[2].innerHTML = 1;
         resultNumbers[1].innerHTML = 0;
@@ -63,8 +61,6 @@ function showFinal(getsome) {
         finalText.innerHTML = `The value of index 2 of the Fibonacci sequence is equal to 1`;
     }
      else {
-         console.log(fibo[(input.value - 2)].toString().length);
-
         resultNumbers[2].innerHTML = fibo[Number(input.value - 1)];
         resultNumbers[1].innerHTML = fibo[Number(input.value - 2)];
         resultNumbers[0].innerHTML = fibo[Number(input.value - 3)];
