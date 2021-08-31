@@ -186,6 +186,9 @@ body {
         }
     }
     .fibo__box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-top: 1rem;
         font-family: 'Courgette', cursive;
         .fibo__wait {
@@ -241,6 +244,39 @@ body {
                     font-size: 2.1rem;
                     transform: rotateZ(-90deg);
                 }
+            }
+
+        }
+        .fibo__result.wrap {
+            min-height: 12rem;
+            max-width: 23rem;
+
+            .fibo_numbers {
+                margin-bottom: 0%;
+                flex-direction: column;
+                align-items: center;
+
+                span {
+                    display: none;
+                }
+                .alert {
+                    text-align: center;
+                    font-size: 1.3rem;
+                    line-height: 1.5;
+                }
+            }
+            .fibo_numbers.minimize {
+                & div:first-child {
+                    font-size: 1.5rem;
+                    opacity: 0.5;
+                }
+                & div:nth-child(2) {
+                    font-size: 2.5rem;
+                }
+                & div:nth-child(3) {
+                    font-size: 1.5rem;
+                    opacity: 0.5;
+                }           
             }
 
         }

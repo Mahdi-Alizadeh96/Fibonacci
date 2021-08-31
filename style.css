@@ -164,6 +164,9 @@ body {
   color: #fff2e1;
 }
 .fibo .fibo__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 1rem;
   font-family: "Courgette", cursive;
 }
@@ -238,6 +241,34 @@ body {
   top: 3.6rem;
   font-size: 2.1rem;
   transform: rotateZ(-90deg);
+}
+.fibo .fibo__box .fibo__result.wrap {
+  min-height: 12rem;
+  max-width: 23rem;
+}
+.fibo .fibo__box .fibo__result.wrap .fibo_numbers {
+  margin-bottom: 0%;
+  flex-direction: column;
+  align-items: center;
+}
+.fibo .fibo__box .fibo__result.wrap .fibo_numbers span {
+  display: none;
+}
+.fibo .fibo__box .fibo__result.wrap .fibo_numbers .alert {
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+.fibo .fibo__box .fibo__result.wrap .fibo_numbers.minimize div:first-child {
+  font-size: 1.5rem;
+  opacity: 0.5;
+}
+.fibo .fibo__box .fibo__result.wrap .fibo_numbers.minimize div:nth-child(2) {
+  font-size: 2.5rem;
+}
+.fibo .fibo__box .fibo__result.wrap .fibo_numbers.minimize div:nth-child(3) {
+  font-size: 1.5rem;
+  opacity: 0.5;
 }
 .fibo .fibo__box .fibo__final {
   text-align: center;

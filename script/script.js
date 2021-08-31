@@ -6,10 +6,14 @@ const   input = document.querySelector('.fibo__index input'),
         fiboNumbers = document.querySelector('.fibo_numbers'),
         finalText = document.querySelector('.fibo__final');
 let fibo = [1];
+let resultNumbers = Array.from(fiboNumbers.children);
 // EventListenet
 go.addEventListener('click', ()=>{
     fibo = [1]
     fiboResult.classList.remove('active');
+    fiboResult.classList.remove('wrap');
+    fiboNumbers.classList.remove('minimize');
+    resultNumbers[1].classList.remove('alert');
     if(input.value === '' || input.value < 1){
         fiboWait.classList.add('active');
         finalText.innerHTML = `Fibo Final Result `;
@@ -34,7 +38,6 @@ function calc(getsome) {
         }
     }
     showRerult(getsome);
-    console.log(fibo)
 };
 function showRerult(getsome) {
     fiboWait.classList.remove('active');
@@ -46,7 +49,7 @@ function showRerult(getsome) {
     }, 3000);
 }
 function showFinal(getsome) {
-    const resultNumbers = Array.from(fiboNumbers.children);
+
 
     if(getsome == 1) {
         resultNumbers[2].innerHTML = 1;
@@ -60,9 +63,24 @@ function showFinal(getsome) {
         finalText.innerHTML = `The value of index 2 of the Fibonacci sequence is equal to 1`;
     }
      else {
+         console.log(fibo[(input.value - 2)].toString().length);
+
         resultNumbers[2].innerHTML = fibo[Number(input.value - 1)];
         resultNumbers[1].innerHTML = fibo[Number(input.value - 2)];
         resultNumbers[0].innerHTML = fibo[Number(input.value - 3)];
         finalText.innerHTML = `The value of index ${getsome} of the Fibonacci sequence is equal to ${fibo[Number(input.value - 2)]}`
+
+        if(fibo[(input.value - 2)].toString().length > 4 && fibo[(input.value - 2)].toString().length < 8 ) {
+            fiboResult.classList.add('wrap');
+        } else if (fibo[(input.value - 2)].toString().length > 7 && fibo[(input.value - 2)].toString().length < 13) {
+            fiboResult.classList.add('wrap');
+            fiboNumbers.classList.add('minimize');
+        } else if (fibo[(input.value - 2)].toString().length > 12) {
+            fiboResult.classList.add('wrap');
+            resultNumbers[2].innerHTML = '';
+            resultNumbers[1].innerHTML = 'Thats a BIG number . . .</br>See below';
+            resultNumbers[1].classList.add('alert');
+            resultNumbers[0].innerHTML = '';
+        }
     }
 }
