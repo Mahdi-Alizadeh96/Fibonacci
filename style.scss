@@ -25,11 +25,29 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+// -------------------
 input::placeholder {
     color: map-get($colors, second);
     font-size: 0.8em;
     text-shadow: none;
   }
+::selection {
+    background-color: map-get($colors, main );
+    color: map-get($colors, alter);
+}
+::-webkit-scrollbar {
+    width: 1rem;
+}
+::-webkit-scrollbar-track {
+    background-color: map-get($colors, alter);
+}
+::-webkit-scrollbar-thumb {
+    background-color: map-get($colors, main);
+    border-radius: 0.5rem;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #c0a178;
+}
 //--------------------
 
 * {
