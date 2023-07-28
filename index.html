@@ -76,9 +76,11 @@
 
         if ("serviceWorker" in navigator) {
 
+            const repository = 'Fibonacci'
+
             try {
 
-                const registration = await navigator.serviceWorker.register(`${window.location.href}sw.js`);
+                const registration = await navigator.serviceWorker.register(`/${repository}/sw.js`, {scope: `/${repository}/`});
 
             } catch (error) {
                 
