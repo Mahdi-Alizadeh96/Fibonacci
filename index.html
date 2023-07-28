@@ -77,9 +77,7 @@
 
             try {
 
-                console.log(window.location.href);
-
-                const registration = await navigator.serviceWorker.register('sw.js');
+                const registration = await navigator.serviceWorker.register(`${window.location.href}sw.js`);
 
             } catch (error) {
                 
