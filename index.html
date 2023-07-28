@@ -75,12 +75,13 @@
     window.addEventListener('load', async () => {
 
         if ("serviceWorker" in navigator) {
-
-            const repository = 'Fibonacci'
-
+            
+            
+            const repository = '/Fibonacci/'
+            
             try {
-
-                const registration = await navigator.serviceWorker.register(`/${repository}/sw.js`, {scope: `/${repository}/`});
+                
+                const registration = await navigator.serviceWorker.register(`${repository}sw.js`);
 
             } catch (error) {
                 
@@ -91,6 +92,7 @@
         }
 
     })
+
 </script>
 <script src="script/dots.js"></script>
 <script src="script/script.js"></script>

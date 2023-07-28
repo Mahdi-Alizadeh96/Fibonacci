@@ -1,17 +1,18 @@
+const repository = '/Fibonacci'
 
 self.addEventListener('install', async (event) => {
 
     console.log('[Service Worker] Installing Service Worker ...');
-
-    const resources = ['/', '/index.html', '/style.css', '/script/dots.js', '/script/script.js', '/media/patt.png', '/media/icon.png', '/media/math2.png'];
-
-    event.waitUntil(addResourcesToCache(resources.map(item => `/${repository}${item})}`)));
 
 });
 
 self.addEventListener('activate', (event) => {
 
     console.log('[Service Worker] Activating Service Worker ...');
+
+    const resources = ['/', '/index.html', '/style.css', '/script/dots.js', '/script/script.js', '/media/patt.png', '/media/icon.png', '/media/math2.png'];
+
+    event.waitUntil(addResourcesToCache(resources.map(item => `${repository}${item}`)));
 
 });
 
