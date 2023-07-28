@@ -5,7 +5,7 @@ self.addEventListener('install', async (event) => {
 
     const resources = ['/', '/index.html', '/style.css', '/script/dots.js', '/script/script.js', '/media/patt.png', '/media/icon.png', '/media/math2.png'];
 
-    event.waitUntil(addResourcesToCache(resources));
+    event.waitUntil(addResourcesToCache(resources.map(item => `${window.location.href}${item.substring(1)}`)));
 
 });
 
