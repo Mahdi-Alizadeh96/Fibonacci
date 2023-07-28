@@ -1,4 +1,10 @@
-const repository = '/Fibonacci'
+let repository = '/Fibonacci/';
+
+if (!self?.serviceWorker?.scope?.includes('github')) {
+
+    repository = '/'
+
+}
 
 self.addEventListener('install', async (event) => {
 
@@ -12,7 +18,7 @@ self.addEventListener('activate', (event) => {
 
     const resources = ['/', '/index.html', '/style.css', '/script/dots.js', '/script/script.js', '/media/patt.png', '/media/icon.png', '/media/math2.png'];
 
-    event.waitUntil(addResourcesToCache(resources.map(item => `${repository}${item}`)));
+    event.waitUntil(addResourcesToCache(resources.map(item => `${repository}${item.substring(1)}`)));
 
 });
 

@@ -76,8 +76,13 @@
 
         if ("serviceWorker" in navigator) {
             
-            
-            const repository = '/Fibonacci/'
+            let repository = '/Fibonacci/';
+
+            if (!window.location.href.includes('github')) {
+
+                repository = '/'
+
+            }
             
             try {
                 
