@@ -70,6 +70,25 @@
         </div>
     </section>
 </body>
+<script>
+    window.addEventListener('load', async () => {
+
+        if ("serviceWorker" in navigator) {
+
+            try {
+
+                const registration = await navigator.serviceWorker.register('/sw.js');
+
+            } catch (error) {
+                
+                console.log('[ServiceWorker] Error registering service worker', error);
+
+            }
+
+        }
+
+    })
+</script>
 <script src="script/dots.js"></script>
 <script src="script/script.js"></script>
 </html>
