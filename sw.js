@@ -2,12 +2,12 @@ let repository = '/Fibonacci/';
 
 const serviceWorkerVersion = "v3";
 
-if (!self?.serviceWorker?.scope?.includes('github')) {
+// if (!self?.serviceWorker?.scope?.includes('github')) {
 
-    repository = '/'
+//     repository = '/'
 
-}
-
+// }
+ 
 self.addEventListener('install', async (event) => {
 
     console.log('[Service Worker] Installing Service Worker ...');
